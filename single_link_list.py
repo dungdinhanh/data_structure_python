@@ -55,6 +55,7 @@ class SingleLinkList:
             return
         data = self.root.data
         self.root = self.root.next
+        return data
 
     def delete_current(self):
         if self.root is None:

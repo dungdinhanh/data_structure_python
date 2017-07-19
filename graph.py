@@ -98,6 +98,61 @@ class Graph:
         else:
             return False
 
+    def dfs(self, data=None, num=0):
+        if data is None and num is None:
+            return None
+        if data is not None:
+            vertex = self.find_vertex(data)
+            if vertex is None:
+                return None
+            start = self.vertices.index(vertex)
+        else:
+            start = num
+        temp_stack = stack.Stack()
+        visit = []
+        count = 0
+        for vertex in self.vertices:
+            visit.append(False)
+        temp_stack.push(start)
+        while not temp_stack.is_empty():
+            index = temp_stack.pop()
+            if index is None:
+                return
+            if not visit[index]:
+                visit[index] = True
+                print(self.vertices[index])
+                for vertex in self.vertices[index].get_adjacency():
+                    index2 = self.vertices.index(vertex)
+                    if index2 is None:
+                        continue
+                    if not visit[index2]:
+                        temp_stack.push(index2)
+
+    def bfs(self, data=None, num=0):
+        if data is None and num is None:
+            return None
+        if data is not None:
+            vertex = self.find_vertex(data)
+            if vertex is None:
+                return None
+            start = self.vertices.index(vertex)
+        else:
+            start = num
+        visit = []
+        for vertex in self.vertices:
+            visit.append(False)
+        index_queue = queue.Queue()
+        index_queue.enqueue(start)
+        while not index_queue.is_empty():
+            index = index_queue.de_queue()
+            if not visit[index]:
+                visit[index] = True
+                print(self.vertices[index])
+                for vertex in self.vertices[index].get_adjacency():
+                    index2 = self.vertices.index(vertex)
+                    if not visit[index2]:
+                        index_queue.enqueue(index2)
+
     def __str__(self):
         return self.vertices
 
@@ -125,6 +180,16 @@ print(new_list)
 v = graph.find_vertex(6)
 new_list = v.get_adjacency()
 print(new_list)
-
+graph.add_vertex(9)
+graph.add_vertex(10)
+graph.add_vertex(8)
+graph.add_edge(8, 9)
+graph.add_edge(9, 10)
+graph.add_edge(7, 8)
+graph.add_edge(8, 5)
+print("bfs")
+graph.bfs(5)
+print("dfs")
+graph.dfs(5)
 
 
