@@ -116,15 +116,15 @@ class Sort:
 
 
 
-
-new_list = []
-for i in range(20):
-    new_int = randint(1, 80)
-    new_list.append(new_int)
-print(new_list)
-
-my_sort = Sort()
-my_sort.data_list = new_list
-my_sort.heap_sort()
-print(my_sort.data_list)
+#
+# new_list = []
+# for i in range(20):
+#     new_int = randint(1, 80)
+#     new_list.append(new_int)
+# print(new_list)
+#
+# my_sort = Sort()
+# my_sort.data_list = new_list
+# my_sort.heap_sort()
+# print(my_sort.data_list)
 
