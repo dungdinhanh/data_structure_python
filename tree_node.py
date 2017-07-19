@@ -50,7 +50,7 @@ class TreeNode:
             self.left = self.left.delete_node(data)
         elif data > self.data and self.right is not None:
             self.right = self.right.delete_node(data)
-        elif data == self.data == 0:
+        elif data == self.data:
             if self.left is None:
                 return self.right
             elif self.right is None:

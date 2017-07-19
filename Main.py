@@ -1,5 +1,5 @@
 import Word
-import BST
+import bst
 import tree_node
 
 
@@ -22,7 +22,7 @@ def read_file(input_file, bst):
         word.input_word(str_list[0], str_list[1])
         bst.insert_node(word)
 
-bst = BST.BST()
+bst = bst.BST()
 read_file("E:\\Python\\DataStructure\\dictionary.txt", bst)
 while True:
     print("Menu")
