@@ -1,6 +1,0 @@
-dog: cho
-cat: meo
-dad: nguoi dan ong tuyet voi
-girlfriend: chan ly cuoc doi toi
-horse : ngua
-chicken: ga
