@@ -23,7 +23,8 @@ def read_file(input_file, bst):
         bst.insert_node(word)
 
 bst = bst.BST()
-read_file("E:\\Python\\DataStructure\\dictionary.txt", bst)
+#read_file("E:\\Python\\DataStructure\\dictionary.txt", bst)
+read_file("dictionary.txt", bst)
 while True:
     print("Menu")
     print("1. Insert word")
